@@ -5,9 +5,9 @@ from mcpi import block
 from mcpi import event
 from time import sleep
 
-def init():
-    mc = Minecraft.create("127.0.0.1", 4711)
-    return mc
+#def init():
+ #   mc = Minecraft.create("127.0.0.1", 4711)
+  #  return mc
 
 def init():
     mc = Minecraft.create("10.183.3.25", 4711)
@@ -16,9 +16,9 @@ def init():
 def tnt(mc,x,y,z):
     for each in range(30):
         for other in range(1):
-            mc.setBlock(x,y,z,46)
+            mc.setBlock(x,y,z,2)
             sleep(0.1)
-            mc.setBlock(x,y,z,80)
+            mc.setBlock(x,y,z,3)
             sleep(0.025)
         if mc.getBlock(x,y-1,z)==0:
             mc.setBlock(x,y,z,0)
@@ -118,7 +118,7 @@ def checkBlock(mc):
         x=each.pos.x
         y=each.pos.y
         z=each.pos.z
-        if mc.getBlock(x,y,z)==46:
+        if mc.getBlock(x,y,z)==2:
             tnt(mc,x,y,z)
 
 def main():
